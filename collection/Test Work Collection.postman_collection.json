@@ -130,6 +130,26 @@
 				"description": "{{baseURL}}/comments/on-comment"
 			},
 			"response": []
+		},
+		{
+			"name": "Get Comments on article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/comments/on-article/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"comments",
+						"on-article",
+						"2"
+					]
+				},
+				"description": "{{baseURL}}/comments/on-article/2"
+			},
+			"response": []
 		}
 	]
 }
