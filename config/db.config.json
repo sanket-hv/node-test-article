@@ -1,0 +1,6 @@
+{
+    "db_name": "test_article",
+    "db_user": "root",
+    "db_pass": "thinkit",
+    "db_host": "localhost"
+}

@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "bee7f55a-fbc1-4b73-9a67-042e533b0639",
+		"name": "Test Work Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/articles?page=1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"articles"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				},
+				"description": "{{baseURL}}/articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Get an articel content",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/articles/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"articles",
+						"2"
+					]
+				},
+				"description": "{{baseURL}}/articles/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Post an article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nickname\":\"article 3\",\n    \"title\":\"Sparrow 3\",\n    \"content\":\"Content for article 3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/articles",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"articles"
+					]
+				},
+				"description": "{{baseURL}}/articles"
+			},
+			"response": []
+		},
+		{
+			"name": "Post comments on article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"article_id\":2,\n    \"nickname\":\"comment nickename\",\n    \"content\":\"comment on article\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/comments/on-article",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"comments",
+						"on-article"
+					]
+				},
+				"description": "{{baseURL}}/comments/on-article"
+			},
+			"response": []
+		},
+		{
+			"name": "Comment on a comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"article_id\":2,\n    \"comment_id\":1,\n    \"nickname\":\"comment nickename\",\n    \"content\":\"comment on article\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/comments/on-comment",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"comments",
+						"on-comment"
+					]
+				},
+				"description": "{{baseURL}}/comments/on-comment"
+			},
+			"response": []
+		}
+	]
+}
