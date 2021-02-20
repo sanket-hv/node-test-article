@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
-
+const logger = require('morgan');
 const app = express()
 
 //Importing API
@@ -11,6 +11,7 @@ const api = require('./apis/api')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(logger('dev'))
 app.use('/api_v1.0/', api)
 
 //Server configuration
@@ -26,3 +27,5 @@ app.listen(port, host, (err) => {
         console.log(`Server running at : ${prefix}://${host}:${port}/`)
     }
 })
+
+module.exports = app

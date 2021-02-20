@@ -37,7 +37,7 @@ exports.getArticles = async (req, res) => {
 
 // Get article content
 exports.getArticleContent = async (req, res) => {
-
+    console.log("Get Article Content")
     try {
         const { article_id } = req.params
         const content = await article.findOne({ where: { id: article_id }, attributes: ['content'] })
@@ -55,7 +55,7 @@ exports.getArticleContent = async (req, res) => {
                 msg: error.message
             }
         }
-        return res.status(500).json(err);
+        return res.statusCode(500).json(err);
     }
 }
 
